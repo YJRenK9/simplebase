@@ -1,4 +1,147 @@
+/* -------------------------------------------------------- 
+
+TABLE OF CONTENTS
+
+# GLOBAL
+    # DEFINE GLOBAL VARIABLES (CUSTOM PROPERTIES)
+    # SET GLOBAL VARIABLES (CUSTOM PROPERTIES)
+
+# LAYOUT
+    # MEDIA QUERIES (w/ RESPONSIVE TYPOGRAPHY)
+    # CONTAINER
+    # GRID (ROWS & COLUMNS)
+
+# PAGE STRUCTURE (BASE TEMPLATE)
+    # HEADER
+        # SITE LOGO
+        # SITE NAV
+            # TOGGLE-NAV
+    # MAIN
+        # SECTIONS
+    # FOOTER
+
+# UI COMPONENTS
+    # CARDS
+    # BUTTONS
+
+# ANIMATION
+    # SMOOTH SCROLLING
+
+# CUSTOM STYLING
+    # CUSTOM TYPE BLOCK/SPECIMEN
+
+-------------------------------------------------------- */
+
+/* -----------------------------------------------------
+                        GLOBALS
+-------------------------------------------------------- */
+
+/* SET GLOBAL VARIABLES */
+
+:root {
+
+    /* DEFINE BASE COLORS */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    /* black with 80% opacity */
+    --color-black-80: rgb(0 0 0 / .8);
+
+    --color-grey-100: #f8f9fa;
+    --color-grey-200: rgb(0 0 0 / .2);
+
+    --color-light-blue: #add8e6;
+    --color-aqua: #00ffff;
+    --color-blue: #0000ff;
+    --color-dark-blue: #00004d;
+    
+    --color-green-100: #d4edda;
+    --color-green-200: #a3e4b0;
+    --color-green-300: #7ad394;
+    --color-green-400: #52c878;
+    --color-green-800: #28a745;
+    --color-green-900: #1e7e34;
+
+    /* DEFINE SEMANTIC COLORS */
+    --color-body-background: var(--color-light-blue);
+    --color-body-text: var(--color-dark-blue);
+
+    --color-primary: var(--color-blue);
+    --color-secondary: var(--color-green-800);
+
+    /* BORDER */
+    --color-border: var(--color-black-80);
+    --border-radius: 8px;
+    --border-thickness: .5px;
+
+    /* BASE TYPOGRAPHY */
+    --font-body: system-ui, Helvetica, Arial, sans-serif;
+    --font-headings: Georgia, serif;
+
+    /* SIZING UNITS */
+    --container-width: 1100px;
+    --unit-small: 1em;
+    --unit-medium: 2em;
+    --unit-large: 4em;
+}
+
 /* main css goes here */
-/* body {
-    background-color:aqua;
-} */
+/* SET GLOBAL VARIABLES */
+body {
+    background-color: var(--color-body-background);
+    color: var(--color-body-text);
+    font-family: var(--font-body);
+    font-size: 100%;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-headings);
+    /* margin-top: var(--unit-medium); */
+    /* margin-bottom: var(--unit-small); */
+}
+
+/* SET GLOBAL TYPOGRAPHY */
+
+/* HEADINGS */
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+
+
+/* -----------------------------------------------------
+                        UI COMPONENTS
+-------------------------------------------------------- */
+
+/* CARDS */
+
+.card {
+    display: inline-block;
+    background-color: none;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    border-width: var(--border-thickness);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: var(--unit-small);
+    margin: var(--unit-medium);
+    transition: box-shadow 0.3s ease;
+}
+
+.color-swatch {
+    /* make sure local variables have that underscore after the -- */
+    --_swatch-color: var(--color-grey-100);
+    background-color: var(--_swatch-color);
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    margin: 8px;
+    border: 1px none var(--color-black-80);
+    display: inline-block;
+}

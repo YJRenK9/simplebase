@@ -5,11 +5,20 @@ TABLE OF CONTENTS
 # GLOBAL
     # DEFINE GLOBAL VARIABLES (CUSTOM PROPERTIES)
     # SET GLOBAL VARIABLES (CUSTOM PROPERTIES)
+    # GLOBAL RESETS
+    # SET GLOBAL COLORS
+    # SET GLOBAL TYPOGRAPHY
+        # HEADINGS
+        # LINKS
+        # PARAGRAPHS
+    # GLOBAL MEDIA (images, video, svg)
+    # GLOBAL HELPERS
 
 # LAYOUT
     # MEDIA QUERIES (w/ RESPONSIVE TYPOGRAPHY)
     # CONTAINER
     # GRID (ROWS & COLUMNS)
+    # CARDS
 
 # PAGE STRUCTURE (BASE TEMPLATE)
     # HEADER
@@ -66,6 +75,7 @@ TABLE OF CONTENTS
     --color-body-text: var(--color-dark-blue);
 
     --color-primary: var(--color-blue);
+    --color-primary-dark: var(--color-dark-blue);
     --color-secondary: var(--color-green-800);
 
     /* BORDER */
@@ -106,7 +116,9 @@ h1, h2, h3, h4 {
 
 a {
     color: var(--color-primary);
-    text-decoration: none;
+    text-decoration-color: var(--color-primary-dark);
+    text-underline-offset: .135em;
+    text-decoration-thickness: .05px;
     transition: color 0.3s ease;
 }
 
@@ -114,7 +126,23 @@ a:hover {
     color: var(--color-secondary);
 }
 
+.text-centered {
+    text-align: center;
+}
 
+/* IMAGES (responsive)
+Responsive on small screens 
+Do not stretch too large (beyond the original) 
+on large screens
+*/
+
+img {
+    max-width: 100%;
+    /* Without height auto, the image will stretch downward */
+    height: auto;
+    /* border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
 
 /* -----------------------------------------------------
                         UI COMPONENTS
@@ -144,4 +172,10 @@ a:hover {
     margin: 8px;
     border: 1px none var(--color-black-80);
     display: inline-block;
+}
+
+hr {
+    border: none;
+    border-bottom: var(--border-thickness) solid var(--color-border);
+    margin: var(--unit-xl) 0;
 }

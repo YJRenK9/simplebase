@@ -78,6 +78,8 @@ TABLE OF CONTENTS
     --color-primary-dark: var(--color-dark-blue);
     --color-secondary: var(--color-green-800);
 
+    
+
     /* BORDER */
     --color-border: var(--color-black-80);
     --border-radius: 8px;
@@ -133,7 +135,9 @@ body {
     /* ways to center content besides using flex & justify-content */
     /* margin: 0 auto; */
     margin-inline: auto;
-    padding: 0 var(--unit-medium);
+    /* without this, the container will not have outside gap when shrinking the window */
+    padding-inline: var(--unit-small);
+    /* padding: 0 var(--unit-medium); */
 }
 
 /* GRID SYSTEM (12 column) */
@@ -162,17 +166,51 @@ body {
         gap: var(--unit-small);
     }
 
-    .one-half {
-        grid-column: auto / span 6;
-    }
+    /* SEMANTIC COLUMNS */
+    /* auto is like filling in the end column-width? */
+    .one-half { grid-column: auto / span 6; }
+    .one-third { grid-column: span 4; }
+    .two-thirds { grid-column: auto / span 8; }
+    .one-fourth { grid-column: span 3; }
+    .three-fourths { grid-column: auto / span 9; }
+    /* .one-fifth { grid-column: span 2.4; } */
+    
+    /* SWAPPED */
+    .row.swapped > *:first-child { order: 2; }
+    .row.swapped > *:last-child { order: 1; }
 
-    .one-third {
-        grid-column: span 4;
-    }
+    /* center grid items */
+    .one-half.centered { grid-column-start: 4; }
+    .two-thirds.centered { grid-column-start: 3; }
+    /* .three-fourths.centered { grid-column-start: 3; } */
 
-    .one-fourth {
-        grid-column: span 3;
-    } 
+    /* 12 COLUMN CLASS-BASED GRID SYSTEM */
+    .col-1 { grid-column: auto / span 1; }
+    .col-2 { grid-column: auto / span 2; }
+    .col-3 { grid-column: auto / span 3; }
+    .col-4 { grid-column: auto / span 4; }
+    .col-5 { grid-column: auto / span 5; }
+    .col-6 { grid-column: auto / span 6; }
+    .col-7 { grid-column: auto / span 7; }
+    .col-8 { grid-column: auto / span 8; }
+    .col-9 { grid-column: auto / span 9; }
+    .col-10 { grid-column: auto / span 10; }
+    .col-11 { grid-column: auto / span 11; }
+    .col-12 { grid-column: auto / span 12; }
+
+    /* PUSHED */
+    .push-1 { grid-column-start: 2; }
+    .push-2 { grid-column-start: 3; }
+    .push-3 { grid-column-start: 4; }
+    .push-4 { grid-column-start: 5; }
+    .push-5 { grid-column-start: 6; }
+    .push-6 { grid-column-start: 7; }
+    .push-7 { grid-column-start: 8; }
+    .push-8 { grid-column-start: 9; }
+    .push-9 { grid-column-start: 10; }
+    .push-10 { grid-column-start: 11; }
+    .push-11 { grid-column-start: 12; }
+    .push-12 { grid-column-start: 13; }
 }
 
 /* SET GLOBAL TYPOGRAPHY */
@@ -243,4 +281,25 @@ hr {
     border: none;
     border-bottom: var(--border-thickness) solid var(--color-border);
     margin: var(--unit-xl) 0;
+}
+
+/* CODE BLOCKS */
+/* pre {
+    background-color: var(--color-grey-100);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--unit-small);
+    /* overflow-x: auto; useful but enables more navigation via horizontal scrolling */
+    /*white-space: pre-wrap;  Wraps long lines */
+    /* Breaks long words */
+    /* word-break: break-word;  */
+/* } */ 
+
+pre:has(code) {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--color-grey-100);
+    border: 1px solid var(--color-border);
+    padding: 2px 4px;
+    border-radius: 4px;
+    white-space: pre-wrap;
 }

@@ -13,6 +13,7 @@ TABLE OF CONTENTS
         # PARAGRAPHS
     # GLOBAL MEDIA (images, video, svg)
     # GLOBAL HELPERS
+        # ENABLE SMOOTH SCROLLING
 
 # LAYOUT
     # MEDIA QUERIES (w/ RESPONSIVE TYPOGRAPHY)
@@ -20,7 +21,7 @@ TABLE OF CONTENTS
     # GRID (ROWS & COLUMNS)
     # CARDS
 
-# PAGE STRUCTURE (BASE TEMPLATE)
+# SITE STRUCTURE
     # HEADER
         # SITE LOGO
         # SITE NAV
@@ -32,6 +33,9 @@ TABLE OF CONTENTS
 # UI COMPONENTS
     # CARDS
     # BUTTONS
+
+# CUSTOM SITE STYLING
+    # BODY GRID LAYOUT SYSTEM (header, main, and footer)
 
 # ANIMATION
     # SMOOTH SCROLLING
@@ -70,6 +74,10 @@ TABLE OF CONTENTS
     --color-green-800: #28a745;
     --color-green-900: #1e7e34;
 
+    --color-rubine-red: #D10056;
+    --color-yellow: #ffff00;
+    --color-teal: #008080;
+
     /* DEFINE SEMANTIC COLORS */
     --color-body-background: var(--color-light-blue);
     --color-body-text: var(--color-dark-blue);
@@ -78,7 +86,9 @@ TABLE OF CONTENTS
     --color-primary-dark: var(--color-dark-blue);
     --color-secondary: var(--color-green-800);
 
-    
+    --color-header-background: var(--color-rubine-red);
+    --color-section-background: var(--color-yellow);
+    --color-footer-background: var(--color-teal);
 
     /* BORDER */
     --color-border: var(--color-black-80);
@@ -215,6 +225,35 @@ body {
 
 /* SET GLOBAL TYPOGRAPHY */
 
+/* --------------------------------------------------
+                        SITE STRUCTURE
+-------------------------------------------------- */
+
+.site-header {
+    background-color: var(--color-rubine-red);
+    /* border-bottom: var(--border-thickness) solid var(--color-border);*/
+    padding: var(--unit-small); 
+    /* margin-bottom: var(--unit-medium); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.site-main {
+    
+}
+
+.site-main > .hero-section {
+    background-color: var(--color-yellow)
+}
+
+section {
+    padding-block: var(--unit-large);
+}
+
+.site-footer {
+    background-color: var(--color-teal);
+    padding: var(--unit-small);
+}
+
 /* HEADINGS */
 
 a {
@@ -295,6 +334,7 @@ hr {
     /* word-break: break-word;  */
 /* } */ 
 
+/* stylize code tags that are in pre tags */
 pre:has(code) {
     font-family: 'Courier New', Courier, monospace;
     background-color: var(--color-grey-100);
@@ -302,4 +342,17 @@ pre:has(code) {
     padding: 2px 4px;
     border-radius: 4px;
     white-space: pre-wrap;
+}
+
+body {
+    
+    background-color: var(--color-light-blue);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100svh;
+    /* svh = small viewport height */
+}
+
+html {
+    scroll-behavior: smooth;
 }

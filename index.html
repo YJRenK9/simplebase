@@ -37,6 +37,19 @@
             diam in lacus tincidunt, quis mollis nibh pretium.
         </p>
 
+        <h3>Site Folder Structure</h3>
+
+        <pre><code>
+            sitename/
+                ├── index.html
+                ├── css/
+                │   ├── style.css
+                ├── js/
+                │   ├── script.js
+                ├── img/
+                │   ├── PlaceholderImage.jpg   
+        </code></pre>
+
         <hr>
 
         <h2>CSS Variables</h2>
@@ -394,16 +407,24 @@
         </div>
 
         <div class="row">
-            <div class="col-5 push-10">
+            <div class="col-5 push-1">
                 <img src="images/PlaceholderImage.jpg"  width="2000" height="10000" alt="placeholder image">
-
+                <h1>This is a Row with Text on the Left using col-push and col-pull</h1>
+                <p>This column is reading via the default normal view. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolorem nulla iusto, sed corrupti natus a officiis provident deserunt magni, facere accusantium ratione dolore voluptatem consequuntur. Asperiores iusto beatae cum!</p>
             </div>
             <div class="col-5">
+                <img src="images/PlaceholderImage.jpg"  width="2000" height="10000" alt="placeholder image">
                 <h1>This is a Row with Text on the Left using col-push and col-pull</h1>
                 <p>This column is reading via the default normal view. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolorem nulla iusto, sed corrupti natus a officiis provident deserunt magni, facere accusantium ratione dolore voluptatem consequuntur. Asperiores iusto beatae cum!</p>
             </div>
         </div>
-
+        <div class="row">
+            <div class="one-half push-6">
+                <a class="text-centered" href="home.html">go forward</a>
+            </div>
+            
+        </div>
+        
     </div>
     <!-- MAIN JS -->
     <script src="js/script.js"></script>

@@ -101,10 +101,12 @@ TABLE OF CONTENTS
 
     /* SIZING UNITS */
     --container-width: 1100px;
+    --unit-xsmall: 0.5em;
     --unit-small: 1em;
     --unit-medium: 2em;
     --unit-large: 4em;
     --unit-exl: 8em;
+    --unit-2exl: 10em;
     --container-width: 1100px;
 }
 
@@ -231,11 +233,16 @@ body {
 -------------------------------------------------- */
 
 .site-header {
+    /* display logo on left and nav on right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--color-rubine-red);
     /* border-bottom: var(--border-thickness) solid var(--color-border);*/
     padding: var(--unit-small); 
     /* margin-bottom: var(--unit-medium); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    flex-wrap: wrap;
 }
 
 .site-header .logo {
@@ -249,11 +256,15 @@ body {
 }
 
 .site-header .logo svg {
-   
+    /* remove the gap from a tag */
+    /* display: block; */
+    /* Chris Coyier's fix for gap inline blocks */
+    vertical-align: middle;
     width: 50px;
     height: auto;
     min-width: 50px;
     max-height: 50px;
+
     /* display: block; */
 }
 
@@ -264,6 +275,25 @@ body {
 
 .site-header a {
     text-decoration: none;
+}
+
+.site-header .site-nav ul {
+    display: flex;
+    /* justify-content: space-between; */
+    /* use gap if justify-content doesn't work */
+    gap: var(--unit-small);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.site-header .site-nav a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-grey-100);
+    padding: var(--unit-xsmall);
 }
 
 .site-main {
@@ -280,7 +310,15 @@ section {
 
 .site-footer {
     background-color: var(--color-teal);
-    padding: var(--unit-small);
+    /* padding (top and bottom) (left and right) */
+    padding-block: var(--unit-2exl);
+    padding-inline: var(--unit-small);
+    
+}
+
+/* remove footer padding if it has a container */
+.site-footer:has(.container) {
+    padding-inline: 0;
 }
 
 /* HEADINGS */
@@ -389,6 +427,10 @@ pre:has(code) {
     white-space: pre-wrap;
 }
 
+/* ---------------------------------------------------------------------
+                            CUSTOM SITE STYLING
+----------------------------------------------------------------------*/
+
 body {
     
     background-color: var(--color-light-blue);
@@ -400,4 +442,9 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+.site-header .site-nav a {
+    /* ??? */
+    padding-block-start: calc(var(--unit-xsmall) + .1em);
 }

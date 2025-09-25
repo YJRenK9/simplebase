@@ -36,6 +36,7 @@ TABLE OF CONTENTS
 
 # CUSTOM SITE STYLING
     # BODY GRID LAYOUT SYSTEM (header, main, and footer)
+    # STICKYBOX
 
 # ANIMATION
     # SMOOTH SCROLLING
@@ -73,6 +74,7 @@ TABLE OF CONTENTS
     --color-green-400: #52c878;
     --color-green-800: #28a745;
     --color-green-900: #1e7e34;
+    --color-green-1000: #006818;
 
     --color-rubine-red: #D10056;
     --color-yellow: #ffff00;
@@ -101,12 +103,13 @@ TABLE OF CONTENTS
 
     /* SIZING UNITS */
     --container-width: 1100px;
-    --unit-xsmall: 0.5em;
-    --unit-small: 1em;
-    --unit-medium: 1.5em;
-    --unit-large: 2em;
-    --unit-ex-large: 4em;
-    --unit-2ex-large: 8em;
+    --unit-2xsmall: 0.25rem;
+    --unit-xsmall: 0.5rem;
+    --unit-small: 1rem;
+    --unit-medium: 1.5rem;
+    --unit-large: 2rem;
+    --unit-ex-large: 4rem;
+    --unit-2ex-large: 8rem;
     --container-width: 1100px;
 }
 
@@ -132,9 +135,13 @@ h1, h2, h3, h4 {
 
 /* Remove the default 8px margin on body */
 body {
+
     margin: 0;
 }
-
+/* to fix overflow word break */
+body > * {
+    min-width: 0;
+}
 * {
     box-sizing: border-box;
 }
@@ -428,6 +435,22 @@ img {
     display: inline-block;
 }
 
+.button {
+    background-color: var(--color-green-800);
+    color: var(--color-white);
+    padding: var(--unit-small);
+    margin-block: var(--unit-2xsmall);
+    display: inline-block;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color 0.4s ease;
+}
+
+.button:hover {
+    background-color: var(--color-green-1000);
+    color: var(--color-white);
+}
+
 hr {
     border: none;
     border-bottom: var(--border-thickness) solid var(--color-border);
@@ -484,9 +507,12 @@ html {
 }
 
 .hero-section h1 {
-    font-size: 4em;
+    /* 4em */
+    /* controls the size of the font depending on the vertical size of the window */
+    font-size: clamp(2.5em, 4vh, 4em);
     /* remove unnecesarry margin */
     margin-block: 0;
+
 }
 
 .hero-section p {

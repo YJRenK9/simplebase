@@ -17,8 +17,19 @@
             <!-- class="visually-hidden" -->
             <h1 id="top">Simple Base</h1>
         </div>
-        <nav class="site-nav">
-            <ul>
+        <nav class="site-nav" data-menustate="closed">
+            <button class="menu-button">
+                <span class="hide-visually">
+                    Menu
+                </span>
+            <svg class="simple-navicon" width="24" height="21">
+                <rect class="simple-navicon-top" x="0" y="2" height="3" width="30"></rect>
+                <rect class="simple-navicon-middle" x="0" y="9" height="3" width="30"></rect>
+                <rect class="simple-navicon-bottom" x="0" y="16" height="3" width="30"></rect>
+            </svg>
+            </button>
+            
+            <ul class="text-centered">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="documentation.html">Documentation</a></li>
             </ul>
@@ -501,6 +512,7 @@
         </div>
         
     </footer>
-    
+    <!-- enable site-nav states (open and close) -->
+    <script src="js/script.js"></script>
 </body>
 </html>

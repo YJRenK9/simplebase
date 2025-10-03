@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header on-top-of-hero">
         <div class="logo">
             <a href="index.html">
                 <svg width="185" height="228" viewBox="0 0 185 228" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,8 +20,16 @@
           
         <nav class="site-nav" data-menustate="closed">
             <button class="menu-button">
-                Menu
+                <span class="hide-visually">
+                    Menu
+                </span>
+            <svg class="simple-navicon" width="24" height="21">
+                <rect class="simple-navicon-top" x="0" y="2" height="3" width="30"></rect>
+                <rect class="simple-navicon-middle" x="0" y="9" height="3" width="30"></rect>
+                <rect class="simple-navicon-bottom" x="0" y="16" height="3" width="30"></rect>
+            </svg>
             </button>
+            
             <ul class="text-centered">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="documentation.html">Documentation</a></li>

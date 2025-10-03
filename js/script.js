@@ -8,6 +8,12 @@
 const siteNav = document.querySelector('.site-nav');
 const menuButton = document.querySelector('.menu-button');
 
+// Ensure the menu is closed when resizing above 768px?
+menuButton.addEventListener('resize', () => {
+    if(window.outerWidth > 768) {
+        siteNav.setAttribute('data-menustate', 'closed');
+    }
+});
 
 menuButton.addEventListener('click', () => {
     const currentState = siteNav.getAttribute('data-menustate');

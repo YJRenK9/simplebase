@@ -9,13 +9,14 @@
 <body>
     <header class="site-header on-top-of-hero">
         <div class="logo">
-            <a href="index.html">
+            <a href="index.html" id="topA">
                 <svg width="185" height="228" viewBox="0 0 185 228" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M73.7167 86.9732C73.7167 157.918 -43.454 309.842 131.138 172.393C305.73 34.9446 0 135.007 0 86.9732C0 38.9392 83.14 0 131.138 0C179.136 0 73.7167 86.9732 73.7167 86.9732Z" fill="#419A93"/>
                 </svg>
+                <span id="top" class="text-centered">Simple Base</span>
             </a>
             <!-- class="visually-hidden" -->
-            <h1 id="top">Simple Base</h1>
+            <!-- <h1 id="top"></h1> -->
         </div>
           
         <nav class="site-nav" data-menustate="closed">
@@ -53,7 +54,7 @@
             <div id="features" class="container">
                 <div class="row swapped">
                     <div class="one-half">
-                        <img src="images/PlaceholderImage.jpg"  width="2000" height="10000" alt="placeholder image">
+                        <img src="images/PlaceholderImage.jpg"  width="2000" height="1000" alt="placeholder image">
                     </div>
                     <div class="one-half">
                         <h1>This is a Row with Text on the Left</h1>
@@ -67,7 +68,7 @@
             <div class="container">
                 <div class="row">
                     <div class="one-half">
-                        <img src="images/PlaceholderImage.jpg"  width="2000" height="10000" alt="placeholder image">
+                        <img src="images/PlaceholderImage.jpg"  width="2000" height="1000" alt="placeholder image">
                     </div>
                     <div class="one-half">
                         <h1>This is a Row with Text on the Right</h1>
@@ -81,7 +82,7 @@
             <div class="container">
                 <div class="row centered">
                     <div class="one-half centered">
-                        <img src="images/PlaceholderImage.jpg"  width="2000" height="10000" alt="placeholder image">
+                        <img src="images/PlaceholderImage.jpg"  width="2000" height="1000" alt="placeholder image">
                         <h1>This is a Row with Text on the Center</h1>
                         <p>This column is reading via the default normal view. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolorem nulla iusto, sed corrupti natus a officiis provident deserunt magni, facere accusantium ratione dolore voluptatem consequuntur. Asperiores iusto beatae cum!</p>
                     </div>
@@ -89,10 +90,36 @@
             </div>        
         </section>
     </main>
-    <footer CLASS="site-footer">
+    <footer class="site-footer">
         <div class="container">
-            FOOTER GOES HERE
-            <a href="#top">go top</a>
+            <div class="col-6">
+
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h2>About Simple Base</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ipsa, nostrum eaque quis iste commodi voluptates veniam sapiente at? Dolores enim laborum odio obcaecati, dolor illum ut. Asperiores, error harum.
+                    </p>
+                </div>
+                <div class="col-3 push-9">
+                    <h2>Pages</h2>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="documentation.html">Documentation</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="one-half">
+                    <a href="#top">⬆️go top⬆️</a> 
+                </div>
+                
+            </div>
+            
+            
         </div>
         
     </footer>

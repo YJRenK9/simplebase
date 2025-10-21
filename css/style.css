@@ -281,7 +281,7 @@ body > * {
 }
 
 .site-header h1 {
-    /* font-size: 1.5rem; */
+    font-size: 1.5rem;
     margin: 0;
 }
 
@@ -363,9 +363,9 @@ body > * {
     padding-inline: 0;
 }
 
-.hero-section h1 {
+/* .hero-section h1 {
 
-}
+} */
 
 section {
     padding-block: var(--unit-large);
